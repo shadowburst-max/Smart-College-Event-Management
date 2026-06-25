@@ -1,0 +1,261 @@
+.admin-dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-dashboard-container h2 {
+    margin-bottom: 30px;
+}
+
+.admin-controls {
+    margin-bottom: 30px;
+}
+
+.create-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.create-btn:hover {
+    background-color: #229954;
+}
+
+.create-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.create-form h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.create-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.form-buttons button[type='submit'] {
+    background-color: #27ae60;
+    color: white;
+}
+
+.form-buttons button[type='submit']:hover {
+    background-color: #229954;
+}
+
+.form-buttons button[type='button'] {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.form-buttons button[type='button']:hover {
+    background-color: #7f8c8d;
+}
+
+.roster-view {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.roster-view h3 {
+    margin-top: 0;
+}
+
+.close-btn {
+    background-color: #95a5a6;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.close-btn:hover {
+    background-color: #7f8c8d;
+}
+
+.roster-view table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.roster-view th {
+    background-color: #ecf0f1;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+.roster-view td {
+    padding: 12px;
+    border-bottom: 1px solid #ecf0f1;
+    color: #555;
+}
+
+.roster-view tr:hover {
+    background-color: #f8f9fa;
+}
+
+.events-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.events-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.events-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.events-table th {
+    background-color: #ecf0f1;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+.events-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ecf0f1;
+    color: #555;
+}
+
+.events-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.events-table button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.view-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #2980b9;
+}
+
+.edit-btn {
+    background-color: #f39c12;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #e67e22;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.error-message {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .events-table {
+        font-size: 0.85rem;
+    }
+
+    .events-table th,
+    .events-table td {
+        padding: 8px;
+    }
+
+    .events-table button {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

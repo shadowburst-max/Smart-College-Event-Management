@@ -1,0 +1,134 @@
+.recommendations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recommendations-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.interests-info {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.recommendation-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.rank {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.recommendation-card h3 {
+    margin: 0 0 10px 0;
+    color: white;
+}
+
+.recommendation-card .summary {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.recommendation-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.recommendation-card .tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.recommendation-card .date,
+.recommendation-card .seats {
+    font-size: 0.95rem;
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.recommendation-card button {
+    margin-top: auto;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.recommendation-card .register-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+.recommendation-card .register-btn:hover:not(:disabled) {
+    background-color: #229954;
+}
+
+.recommendation-card .register-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.recommendation-card .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.recommendation-card .cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+.error-message {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+}

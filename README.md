@@ -1,127 +1,84 @@
-# MERN Stack Application
+# Smart College Event Management System
 
-This is a MERN stack application that consists of a Node.js backend and a React frontend. The application is designed to demonstrate a simple authentication system.
+A production-style full-stack MERN application for college event management, built with **React, Vite, Node.js, Express, and MongoDB**. The platform enables secure event management through role-based access control, AI-assisted event enrichment, personalized recommendations, and concurrency-safe event registration.
 
-## Project Structure
+---
 
-```
-mern-app
-├── backend
-│   ├── package.json
-│   ├── .env.example
+## Project Description
+
+The Smart College Event Management System streamlines how colleges organize and manage campus events.
+
+* **Admins** can create, edit, and delete events through a dedicated dashboard.
+* Event descriptions are automatically enriched with **AI-generated summaries and tags** using **Gemini 2.5 Flash**.
+* **Students** can browse upcoming events, register securely, cancel registrations, and receive personalized event recommendations based on their interests.
+* The backend enforces **JWT authentication**, **role-based authorization**, and **atomic MongoDB operations** to prevent race conditions during event registration.
+
+---
+
+## Key Features
+
+* 🔐 JWT-based authentication for students and administrators
+* 👨‍💼 Dedicated admin dashboard for event management
+* 🤖 AI-powered event summaries and tag generation using Gemini 2.5 Flash
+* 🎯 Personalized event recommendations using a lightweight tag-overlap scoring algorithm
+* ⚡ Race-condition-safe event registration with atomic MongoDB updates
+* ↩️ Student registration cancellation with automatic seat restoration
+* 🛡️ Role-based access control for protected admin routes
+* 📱 Responsive user interface built with React and modular CSS
+* 🐳 Docker-ready project structure
+
+---
+
+## Tech Stack
+
+| Category             | Technologies                     |
+| -------------------- | -------------------------------- |
+| **Frontend**         | React, Vite, React Router, Axios |
+| **Backend**          | Node.js, Express.js              |
+| **Database**         | MongoDB, Mongoose                |
+| **Authentication**   | JWT, bcrypt                      |
+| **AI Integration**   | Gemini 2.5 Flash API             |
+| **Logging**          | Winston                          |
+| **Containerization** | Docker Compose                   |
+
+---
+
+## Repository Structure
+
+```text
+mern-app/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
 │   ├── server.js
-│   ├── config
-│   │   └── db.js
-│   ├── controllers
-│   │   └── authController.js
-│   ├── models
-│   │   └── User.js
-│   ├── routes
-│   │   └── authRoutes.js
-│   ├── middleware
-│   │   └── auth.js
-│   └── utils
-│       └── logger.js
-├── frontend
+│   └── package.json
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   └── App.jsx
 │   ├── package.json
-│   ├── .env
-│   ├── public
-│   │   └── index.html
-│   └── src
-│       ├── index.js
-│       ├── App.js
-│       ├── api
-│       │   └── api.js
-│       ├── components
-│       │   └── Header.js
-│       ├── pages
-│       │   └── Home.js
-│       ├── hooks
-│       │   └── useAuth.js
-│       └── styles
-│           └── main.css
-├── .gitignore
+│   └── vite.config.js
+│
 ├── docker-compose.yml
-├── README.md
-└── .env.example
+├── .gitignore
+└── README.md
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+## Future Improvements
 
-- Node.js (v14 or later)
-- MongoDB (local or cloud instance)
-- Docker (optional, for running with Docker)
-
-### Installation
-
-1. Clone the repository:
-
-   ```
-   git clone <repository-url>
-   cd mern-app
-   ```
-
-2. Navigate to the backend directory and install dependencies:
-
-   ```
-   cd backend
-   npm install
-   ```
-
-3. Set up environment variables:
-
-   - Copy `.env.example` to `.env` and fill in the required values.
-
-4. Navigate to the frontend directory and install dependencies:
-
-   ```
-   cd ../frontend
-   npm install
-   ```
-
-5. Set up environment variables for the frontend:
-
-   - Create a `.env` file and specify the API endpoint.
-
-### Running the Application
-
-#### Backend
-
-1. Start the backend server:
-
-   ```
-   cd backend
-   npm start
-   ```
-
-#### Frontend
-
-1. Start the frontend application:
-
-   ```
-   cd frontend
-   npm start
-   ```
-
-### Docker Setup
-
-To run the application using Docker, you can use the provided `docker-compose.yml` file. Make sure Docker is installed and running, then execute:
-
-```
-docker-compose up
-```
-
-### Usage
-
-- Access the frontend application at `http://localhost:3000`.
-- The backend API will be available at `http://localhost:5000/api`.
-
-### Contributing
-
-Feel free to submit issues or pull requests for any improvements or bug fixes.
-
-### License
-
-This project is licensed under the MIT License.
+* QR-code based attendance system
+* Email notifications for registrations and reminders
+* Event analytics dashboard
+* Image upload support for events

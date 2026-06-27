@@ -13,15 +13,15 @@ const logger = winston.createLogger({
     ],
 });
 
-const info = (message) => {
+const logInfo = (message) => {
     logger.info(message);
 };
 
-const error = (message) => {
+const logError = (message) => {
     logger.error(message);
 };
 
 export default {
-    info,
-    error,
+    logInfo,
+    logError,
 };

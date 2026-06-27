@@ -3,6 +3,17 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import logger from '../utils/logger.js';
 
+const ADMIN_EMAIL = 'kushv0703@gmail.com';
+
+const normalizeAdminRole = async (user) => {
+    if (!user) return user;
+    if (user.email === ADMIN_EMAIL && user.role !== 'admin') {
+        user.role = 'admin';
+        await user.save();
+    }
+    return user;
+};
+
 // Register a new user
 export const register = async (req, res, next) => {
     const { name, email, password, interests } = req.body;
@@ -23,7 +34,7 @@ export const register = async (req, res, next) => {
             email,
             passwordHash,
             interests: interests || [],
-            role: 'student'
+            role: email === 'kushv0703@gmail.com' ? 'admin' : 'student'
         });
 
         await newUser.save();
@@ -57,7 +68,8 @@ export const login = async (req, res, next) => {
     const { email, password } = req.body;
 
     try {
-        const user = await User.findOne({ email });
+        let user = await User.findOne({ email });
+        user = await normalizeAdminRole(user);
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
         }

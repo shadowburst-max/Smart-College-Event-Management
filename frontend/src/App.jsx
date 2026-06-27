@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Login from './pages/Login.jsx';
+import AdminLogin from './pages/AdminLogin.jsx';
 import Signup from './pages/Signup.jsx';
+import Landing from './pages/Landing.jsx';
 import EventList from './pages/EventList.jsx';
 import Recommendations from './pages/Recommendations.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
@@ -50,9 +52,11 @@ const App = () => {
                 <Routes>
                     {!user ? (
                         <>
+                            <Route path="/" element={<Landing />} />
                             <Route path="/login" element={<Login onLogin={handleLogin} />} />
+                            <Route path="/admin-login" element={<AdminLogin onLogin={handleLogin} />} />
                             <Route path="/signup" element={<Signup onLogin={handleLogin} />} />
-                            <Route path="*" element={<Navigate to="/login" />} />
+                            <Route path="*" element={<Navigate to="/" />} />
                         </>
                     ) : (
                         <>

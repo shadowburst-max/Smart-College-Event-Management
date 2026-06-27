@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../api/api';
 import '../styles/AuthPages.css';
 
-const Login = ({ onLogin }) => {
+const AdminLogin = ({ onLogin }) => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -22,7 +22,11 @@ const Login = ({ onLogin }) => {
         try {
             const response = await loginUser(formData);
             onLogin(response.token, response.user);
-            navigate('/');
+            if (response.user.role === 'admin') {
+                navigate('/admin');
+            } else {
+                navigate('/');
+            }
         } catch (err) {
             setError(err.message || 'Login failed. Please try again.');
         } finally {
@@ -33,7 +37,8 @@ const Login = ({ onLogin }) => {
     return (
         <div className="auth-container">
             <div className="auth-form">
-                <h2>Login</h2>
+                <h2>Admin Login</h2>
+                <p className="auth-note">Use your administrator credentials to manage events and registrations.</p>
                 {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -61,14 +66,11 @@ const Login = ({ onLogin }) => {
                     </button>
                 </form>
                 <p>
-                    Don't have an account? <Link to="/signup">Sign up here</Link>
-                </p>
-                <p>
-                    Are you an admin? <Link to="/admin-login">Admin login here</Link>
+                    Not an admin? <Link to="/login">Student login here</Link>
                 </p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default AdminLogin;

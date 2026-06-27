@@ -164,7 +164,3 @@ button:disabled {
         padding: 10px;
     }
 }
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
